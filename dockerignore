@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pytest_cache/
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Local env files (compose uses env_file at runtime; don't bake into image)
+.env
+.env.*
+
+# Git
+.git
+.gitignore
+
+# Data
+*.db
+data/

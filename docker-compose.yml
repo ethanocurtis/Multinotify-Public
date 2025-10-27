@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+  discord-bot:
+    build: .
+    container_name: reddit-rss-discord-bot
+    restart: unless-stopped
+    # pass your environment at runtime (token, reddit creds)
+    env_file:
+      - .env
+    # persist the SQLite database to a named volume
+    volumes:
+      - bot_data:/app/data
+    # no ports exposed—this bot initiates outbound connections only
+    # healthcheck could be added if you expose a status endpoint
+
+volumes:
+  bot_data:
+    driver: local
